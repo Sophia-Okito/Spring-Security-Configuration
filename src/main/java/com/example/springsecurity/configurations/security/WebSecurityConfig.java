@@ -43,7 +43,6 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/actuator/health/**").permitAll()
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        .requestMatchers("/api/v1/user/**").hasAnyAuthority("USER")
                         .anyRequest()
                         .authenticated()
                 )

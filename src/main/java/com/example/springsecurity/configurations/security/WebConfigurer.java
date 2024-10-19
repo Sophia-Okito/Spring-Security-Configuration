@@ -1,6 +1,6 @@
 package com.example.springsecurity.configurations.security;
 
-import com.berryinkstamp.berrybackendservice.configs.AppEnvironmentFilter;
+import com.example.springsecurity.configurations.AppEnvironmentFilter;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import org.slf4j.Logger;

@@ -15,8 +15,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -50,7 +48,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     private Authentication userEmailAndPasswordAuthentication(String principal, String password) {
         User user = userRepository.findFirstByEmail(principal).orElseThrow(() -> new BadRequestException("Authentication failed"));
         List<GrantedAuthority> grantedAuthorities = List.of(new SimpleGrantedAuthority(user.getRole().name()));
-        DBAuthenticationProvider authenticationProvider = new DBAuthenticationProvider(userModelDetailsService, adminModelDetailsService);
+        DBAuthenticationProvider authenticationProvider = new DBAuthenticationProvider(userModelDetailsService);
         return authenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(principal, password, grantedAuthorities));
     }
 

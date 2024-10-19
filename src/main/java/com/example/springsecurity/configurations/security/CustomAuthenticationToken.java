@@ -1,6 +1,6 @@
 package com.example.springsecurity.configurations.security;
 
-import com.berryinkstamp.berrybackendservice.enums.AuthProvider;
+import com.example.springsecurity.enums.AuthProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
